@@ -26,6 +26,7 @@ export class ProductCreateComponent implements OnInit{
   public onFileChanged(event:any) {
     //Select File
     this.selectedFile = event.target.files[0];
+    this.onUpload();
   }
 
   ngOnInit(): void {

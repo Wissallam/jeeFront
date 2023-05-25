@@ -26,7 +26,7 @@ export const navItems: INavData[] = [
     children: [
 
       {
-        name: 'Cards',
+        name: 'List Product',
         url: '/base/cards'
       },
       {
