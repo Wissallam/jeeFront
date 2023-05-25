@@ -30,7 +30,7 @@ export const navItems: INavData[] = [
         url: '/base/cards'
       },
       {
-        name: 'Carousel',
+        name: 'Create product',
         url: '/base/carousel'
       },
 

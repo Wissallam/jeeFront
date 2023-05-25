@@ -1,0 +1,57 @@
+<c-card class="mb-4">
+  <c-card-header >
+    <strong>Add Product </strong> <small>Please enter the information for your product.</small>
+  </c-card-header>
+  <c-card-body>
+    <p class="text-medium-emphasis small">
+
+    </p>
+      <form
+            [validated]=""
+            cForm
+            class="row g-3 needs-validation"
+      >
+
+        <c-col md="4">
+          <label cLabel for="Name_of_product">Name of product</label>
+          <input cFormControl id="Name_of_product" required type="text" [(ngModel)]="product.label" name="productName"  value="product 1" />
+          <c-form-feedback [valid]="true">Looks good!</c-form-feedback>
+        </c-col>
+        <c-col md="4">
+          <label cLabel for="validationCustom02">Description of product</label>
+          <input cFormControl id="validationCustom02" required type="text" name="productDesc" [(ngModel)]="product.desc_product" value="Otto" />
+          <c-form-feedback [valid]="true">Looks good!</c-form-feedback>
+        </c-col>
+        <c-col md="4">
+          <label cLabel for="ht_price">HT Price</label>
+          <input cFormControl id="ht_price" required name="ht_price" type="text" [(ngModel)]="product.htPrice" value="product 1" />
+          <c-form-feedback [valid]="true">Looks good!</c-form-feedback>
+        </c-col>
+
+        <c-col md="4">
+          <label cLabel for="tva_product">TVA</label>
+          <input cFormControl id="tva_product" name="tva_product"  [(ngModel)]="product.tva"  required type="text" />
+          <c-form-feedback [valid]="false">Please provide a valid city.</c-form-feedback>
+        </c-col>
+
+        <c-col md="3">
+          <label cLabel for="codeproduct">Code product</label>
+          <input cFormControl id="codeproduct" name="codeproduct" [(ngModel)]="product.codeProduct"  required type="text" />
+          <c-form-feedback [valid]="false">Please provide a valid zip.</c-form-feedback>
+        </c-col>
+        <div class="mb-3">
+          <label cLabel for="img_product">Image product</label>
+          <input cFormControl (change)="onFileChanged($event)"  name="img_product" id="img_product" type="file" />
+        </div>
+
+        <c-col xs="12">
+          <button cButton class="me-1" (click)="is_ok()" color="primary" type="submit">
+            Submit form
+          </button>
+          <button  cButton color="secondary" type="reset">
+            Reset
+          </button>
+        </c-col>
+      </form>
+  </c-card-body>
+</c-card>

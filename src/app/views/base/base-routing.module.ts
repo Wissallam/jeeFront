@@ -9,6 +9,7 @@ import { ListGroupsComponent } from './list-groups/list-groups.component';
 import { NavsComponent } from './navs/navs.component';
 import { TablesComponent } from './tables/tables.component';
 import { TabsComponent } from './tabs/tabs.component';
+import {ProductCreateComponent} from "../products/product-create/product-create.component";
 
 
 const routes: Routes = [
@@ -33,9 +34,9 @@ const routes: Routes = [
       },
       {
         path: 'carousel',
-        component: CarouselsComponent,
+        component: ProductCreateComponent,
         data: {
-          title: 'Carousel',
+          title: 'Ajouter ',
         },
       },
 
