@@ -11,7 +11,7 @@ export class ProductService {
 
   private _product:Product;
   private _list_products:Array<Product>;
-  private _url=environment.baseUrl+'product';
+  private _url=environment.baseUrl+'product/';
 
 
   constructor(private httpClient:HttpClient) {
@@ -42,6 +42,6 @@ export class ProductService {
 
   //services
   public save(): Observable<Product>{
-    return this.httpClient.post<Product>(this._url,this._product)
+    return this.httpClient.post<Product>("http://localhost:8036/market-project/product/",this.product);
   }
 }

@@ -24,13 +24,13 @@
         </c-col>
         <c-col md="4">
           <label cLabel for="ht_price">HT Price</label>
-          <input cFormControl id="ht_price" required name="ht_price" type="text" [(ngModel)]="product.htPrice" value="product 1" />
+          <input cFormControl id="ht_price" required name="ht_price" type="number" [(ngModel)]="product.htPrice" value="product 1" />
           <c-form-feedback [valid]="true">Looks good!</c-form-feedback>
         </c-col>
 
         <c-col md="4">
           <label cLabel for="tva_product">TVA</label>
-          <input cFormControl id="tva_product" name="tva_product"  [(ngModel)]="product.tva"  required type="text" />
+          <input cFormControl id="tva_product" name="tva_product"  [(ngModel)]="product.tva"  required type="number" />
           <c-form-feedback [valid]="false">Please provide a valid city.</c-form-feedback>
         </c-col>
 
@@ -45,7 +45,7 @@
         </div>
 
         <c-col xs="12">
-          <button cButton class="me-1" (click)="is_ok()" color="primary" type="submit">
+          <button cButton class="me-1" (click)="save()" color="primary" type="submit">
             Submit form
           </button>
           <button  cButton color="secondary" type="reset">

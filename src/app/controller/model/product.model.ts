@@ -6,5 +6,4 @@ export class Product {
   public   codeProduct!: string;
   public   desc_product!: string;
   public   img!: string;
-
 }

@@ -18,7 +18,7 @@ export class ProductCreateComponent implements OnInit{
   retrieveResonse: any;
   message!: string;
   name_imagproduct!: string;
-  _url: string=environment.baseUrl+'product';
+  _url: string=environment.baseUrl+'product/';
   imageName: any;
 
   //Gets called when the user selects an image
@@ -26,6 +26,8 @@ export class ProductCreateComponent implements OnInit{
   public onFileChanged(event:any) {
     //Select File
     this.selectedFile = event.target.files[0];
+    this.onUpload();
+    localStorage.getItem('imageData');
   }
 
   ngOnInit(): void {
@@ -66,24 +68,47 @@ export class ProductCreateComponent implements OnInit{
     console.log(this.product);
   }
   //Gets called when the user clicks on submit to upload the image
-  onUpload() {
-    this.name_imagproduct=this.selectedFile.name;
+ /* onUpload() {
+    this.name_imagproduct = this.selectedFile.name;
     console.log(this.selectedFile);
-    //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
-    const uploadImageData = new FormData();
-    uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
 
-    //Make a call to the Spring Boot Application to save the image
-    this.httpClient.post(this._url, uploadImageData, { observe: 'response' })
-      .subscribe((response) => {
+    const uploadImageData = new FormData();
+    uploadImageData.append('file', this.selectedFile, this.selectedFile.name);
+
+    this.httpClient.post(this._url, uploadImageData,
+      { headers:
+          {
+        'Content-Type': 'multipart/form-data'
+      }, observe: 'response' })
+      .subscribe(
+        (response) => {
           if (response.status === 200) {
             this.message = 'Image uploaded successfully';
+            console.log("Image uploaded successfully");
           } else {
             this.message = 'Image not uploaded successfully';
           }
+        },
+        (error) => {
+          console.error(error);
+          this.message = 'Error occurred while uploading image';
         }
       );
+  }*/
+  onUpload() {
+    const fileReader = new FileReader();
+    fileReader.onload = () => {
+      const imageBase64 = fileReader.result as string;
+      localStorage.setItem('imageData', imageBase64);
+      console.log('Image saved in local storage.');
+      this.product.img=imageBase64;
+    };
+    fileReader.readAsDataURL(this.selectedFile);
+
   }
+
+
+
 
   //Gets called when the user clicks on retieve image button to get the image from back end
   /*getImage() {
