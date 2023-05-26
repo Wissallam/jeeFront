@@ -42,7 +42,7 @@ export class ProductService {
   get list_products_markets(): Array<Product> {
     if (this._list_products_markets==null)
       this._list_products_markets=new Array<Product>();
-    return this._list_products;
+    return this._list_products_markets;
   }
 
   set list_products_markets(value: Array<Product>) {

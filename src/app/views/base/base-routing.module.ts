@@ -50,13 +50,7 @@ const routes: Routes = [
           title: 'List Group',
         },
       },
-      {
-        path: 'navs',
-        component: MarketListProductComponent,
-        data: {
-          title: 'Navs & Tabs',
-        },
-      },
+
       {
         path: 'tables',
         component: TablesComponent,
