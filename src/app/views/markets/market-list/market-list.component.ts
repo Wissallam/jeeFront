@@ -4,6 +4,7 @@ import {MarketOwnerServiceService} from "../../../controller/service/market-owne
 import {MarketOwner} from "../../../controller/model/market-owner.model";
 import {ProductService} from "../../../controller/service/product.service";
 import {mark} from "@angular/compiler-cli/src/ngtsc/perf/src/clock";
+import {Product} from "../../../controller/model/product.model";
 
 @Component({
   selector: 'app-market-list',
@@ -59,13 +60,13 @@ export class MarketListComponent implements OnInit{
 
   public findProductsMarket(marketOwner:MarketOwner):void{
     alert(marketOwner.codeMarket);
-    this.productService.findByMarket(marketOwner.codeMarket).subscribe(data=>{
-        this.productService.list_products_markets=data;
-        console.log('ok');
-        console.log(this.productService.list_products_markets);
-        console.log('ok');
-      }
-    );
+    this.productService.findByMarket(marketOwner.codeMarket).subscribe((data: Product[]) => {
+      console.log(data);
+      this.productService.list_products_markets = data;
+      console.log('ok');
+      console.log(this.productService.list_products_markets);
+      console.log('ok');
+    });
 
   }
 

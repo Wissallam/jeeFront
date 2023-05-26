@@ -14,6 +14,7 @@ export class MarketListProductComponent implements OnInit{
 
   ngOnInit(): void {
 
+    console.log("ng on init ");
     console.log(this.productService.list_products_markets);
 
   }
