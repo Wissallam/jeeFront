@@ -1,0 +1,72 @@
+
+<p class="welcome-message" >Everything you need to in one place</p>
+<p class="sous-welcome-message">Trusted by millions of businesses worldwide</p>
+<!-- List -->
+
+<table
+  [hover]="true"
+  [responsive]="true"
+  [striped]="true"
+  cTable
+  class="mb-0 border ">
+
+  <thead cTableColor="light">
+  <tr>
+    <th class="text-center">
+      <svg cIcon name="cilBasket"></svg>
+    </th>
+    <th>Market</th>
+    <th class="text-center">Location</th>
+    <th class="text-center">Phone</th>
+    <th class="text-center">Status</th>
+    <th class="text-center">Action </th>
+  </tr>
+  </thead>
+
+  <tbody *ngIf="list_marketOwners.length!=0">
+  <tr *ngFor="let marketOwner of list_marketOwners ;index as i  " >
+    <td class="text-center">
+
+    </td>
+
+    <td>
+      <div>{{ marketOwner.name }}</div>
+      <div class="small text-medium-emphasis text-nowrap">
+          <span>
+           ____
+          </span>
+      </div>
+    </td>
+
+    <td>
+      <div>{{ marketOwner.adress }}</div>
+      <div class="small text-medium-emphasis text-nowrap">
+          <span>
+           ____
+          </span>
+      </div>
+    </td>
+
+
+    <td>
+      <div class="d-flex justify-content-between">
+        <div class="float-end ms-1 text-nowrap">
+          <small class="text-medium-emphasis">
+            {{ marketOwner.phone_number }}
+          </small>
+        </div>
+      </div>
+
+    </td>
+
+    <td class="text-center">
+      <button cButton  shape="rounded-pill">Open</button>
+    </td>
+
+    <td class="text-center">
+      <a href="#/base/navs"> <button (click)="findProductsMarket(marketOwner)" cButton color=secondary>Go</button></a>
+    </td>
+
+  </tr>
+  </tbody>
+</table>

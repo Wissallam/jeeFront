@@ -10,6 +10,9 @@ import { NavsComponent } from './navs/navs.component';
 import { TablesComponent } from './tables/tables.component';
 import { TabsComponent } from './tabs/tabs.component';
 import {ProductCreateComponent} from "../products/product-create/product-create.component";
+import {ProductListComponent} from "../products/product-list/product-list.component";
+import {MarketListComponent} from "../markets/market-list/market-list.component";
+import {MarketListProductComponent} from "../products/market-list-product/market-list-product.component";
 
 
 const routes: Routes = [
@@ -27,7 +30,7 @@ const routes: Routes = [
 
       {
         path: 'cards',
-        component: CardsComponent,
+        component: ProductListComponent,
         data: {
           title: 'Cards',
         },
@@ -42,14 +45,14 @@ const routes: Routes = [
 
       {
         path: 'list-group',
-        component: ListGroupsComponent,
+        component: MarketListComponent,
         data: {
           title: 'List Group',
         },
       },
       {
         path: 'navs',
-        component: NavsComponent,
+        component: MarketListProductComponent,
         data: {
           title: 'Navs & Tabs',
         },

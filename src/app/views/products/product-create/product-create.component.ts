@@ -27,15 +27,19 @@ export class ProductCreateComponent implements OnInit{
     //Select File
     this.selectedFile = event.target.files[0];
     this.onUpload();
+
     localStorage.getItem('imageData');
+
   }
 
   ngOnInit(): void {
+
   }
 
   public save(): void{
     this.productService.save().subscribe(data =>{
       if(data != null){
+        this.list_products.push({...this.product});
         alert("okey seccucc");
       }else
         alert('no');

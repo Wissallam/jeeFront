@@ -14,6 +14,7 @@ interface IUser {
   activity: string;
   avatar: string;
   status: string;
+  status1:string
   color: string;
 }
 
@@ -32,11 +33,12 @@ export class DashboardComponent implements OnInit {
       registered: 'Jan 1, 2021',
       country: 'Us',
       usage: 50,
-      period: 'Jun 11, 2021 - Jul 10, 2021',
+      period: 'M-F, 9:30 am - 8:00pm',
       payment: 'Mastercard',
       activity: '10 sec ago',
       avatar: './assets/img/avatars/1.jpg',
       status: 'success',
+      status1:'Open',
       color: 'success'
     },
     {
@@ -45,11 +47,12 @@ export class DashboardComponent implements OnInit {
       registered: 'Jan 1, 2021',
       country: 'Br',
       usage: 10,
-      period: 'Jun 11, 2021 - Jul 10, 2021',
+      period: 'M-F, 9:30 am - 8:00pm',
       payment: 'Visa',
       activity: '5 minutes ago',
       avatar: './assets/img/avatars/2.jpg',
       status: 'danger',
+      status1:'Closed',
       color: 'info'
     },
     {
@@ -58,11 +61,12 @@ export class DashboardComponent implements OnInit {
       registered: 'Jan 1, 2021',
       country: 'In',
       usage: 74,
-      period: 'Jun 11, 2021 - Jul 10, 2021',
+      period: 'M-F, 9:30 am - 11:30pm',
       payment: 'Stripe',
       activity: '1 hour ago',
       avatar: './assets/img/avatars/3.jpg',
-      status: 'warning',
+      status: 'success',
+      status1: 'Open',
       color: 'warning'
     },
     {
@@ -71,11 +75,12 @@ export class DashboardComponent implements OnInit {
       registered: 'Jan 1, 2021',
       country: 'Fr',
       usage: 98,
-      period: 'Jun 11, 2021 - Jul 10, 2021',
+      period: 'M-F, 9:00 am - 11:30pm',
       payment: 'Paypal',
       activity: 'Last month',
       avatar: './assets/img/avatars/4.jpg',
-      status: 'secondary',
+      status: 'warning',
+      status1: 'Closes soon',
       color: 'danger'
     },
     {
@@ -84,11 +89,12 @@ export class DashboardComponent implements OnInit {
       registered: 'Jan 1, 2021',
       country: 'Es',
       usage: 22,
-      period: 'Jun 11, 2021 - Jul 10, 2021',
+      period: 'M-F, 9:15 am - 10:00pm',
       payment: 'ApplePay',
       activity: 'Last week',
       avatar: './assets/img/avatars/5.jpg',
-      status: 'success',
+      status: 'warning',
+      status1: 'Closes soon',
       color: 'primary'
     },
     {
@@ -97,11 +103,12 @@ export class DashboardComponent implements OnInit {
       registered: 'Jan 1, 2021',
       country: 'Pl',
       usage: 43,
-      period: 'Jun 11, 2021 - Jul 10, 2021',
+      period: 'M-F, 7:30 am - 9:00pm',
       payment: 'Amex',
       activity: 'Yesterday',
       avatar: './assets/img/avatars/6.jpg',
-      status: 'info',
+      status: 'warning',
+      status1: 'Closes soon',
       color: 'dark'
     }
   ];

@@ -1,0 +1,41 @@
+<p class="message">Vous avez besoin ? </p>
+
+
+<c-row [gutter]="{g: 3}" [md]="5" [xs]="1" *ngIf="list_products_markets.length!=0">
+  <div *ngFor="let p of list_products_markets ">
+
+    <c-col >
+      <c-card>
+        <ng-container *ngTemplateOutlet="imgPlaceholderTemplate"></ng-container>
+        <c-card-body>
+          <p>{{p.label}}</p>
+          <c-badge class="ms-2 float-end" color="success">+</c-badge>
+          <h6 cCardTitle>{{p.htPrice}}</h6>
+        </c-card-body>
+
+      </c-card>
+    </c-col>
+    <ng-template #imgPlaceholderTemplate let-orientation>
+      <svg
+        [cCardImg]="orientation ?? 'top'"
+        aria-label="Placeholder: Image cap"
+        class="docs-placeholder-img"
+        focusable="false"
+        height="180"
+        preserveAspectRatio="xMidYMid slice"
+        role="img"
+        width="100%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>Placeholder</title>
+        <rect fill="#868e96" height="100%" width="100%"></rect>
+        <text dominant-baseline="middle" dy=".3em" fill="#dee2e6" text-anchor="middle" x="50%" y="50%">Image cap</text>
+        <image [attr.xlink:href]="p.img" [attr.width]="'100%'" [attr.height]="'100%'"></image>
+      </svg>
+
+
+    </ng-template>
+  </div>
+</c-row>
+
+

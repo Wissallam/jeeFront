@@ -1,2 +1,33 @@
 // Here you can add other styles
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
 
+body{
+   background-color: aliceblue !important;
+}
+
+.welcome-message{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   margin-top: 5vh;
+   font-size: 2.5em;
+   font-family: 'Pacifico';
+  }
+.sous-welcome-message{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   margin-bottom: 5vh;
+   font-size: 1em;
+}
+.message{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   margin-top: 5vh;
+   font-size: 1.5em;
+   font-family: 'Pacifico';
+  }

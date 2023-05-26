@@ -11,35 +11,35 @@
                 <span cInputGroupText>
                   <svg cIcon name="cilUser"></svg>
                 </span>
-                <input autoComplete="name" cFormControl placeholder="Name" />
+                <input autoComplete="name" [(ngModel)]="marketOwner.name" name="nameMarket" cFormControl placeholder="Name" />
               </c-input-group>
               <c-input-group class="mb-3">
                 <span cInputGroupText>
                   <svg cIcon name="cilUser"></svg>
                 </span>
-                <input autoComplete="name" cFormControl placeholder="Adress" />
+                <input autoComplete="name" [(ngModel)]="marketOwner.adress" name="adress"  cFormControl placeholder="Adress" />
               </c-input-group>
               <c-input-group class="mb-3">
                 <span cInputGroupText>
                   <svg cIcon name="cilUser"></svg>
                 </span>
-                <input autoComplete="name" cFormControl placeholder="City" />
+                <input autoComplete="name" [(ngModel)]="marketOwner.city" name="city"  cFormControl placeholder="City" />
               </c-input-group>
               <c-input-group class="mb-3">
                 <span cInputGroupText>
                   <svg cIcon name="cilUser"></svg>
                 </span>
-                <input autoComplete="name" cFormControl placeholder="Phone number" />
+                <input autoComplete="name"  [(ngModel)]="marketOwner.phone_number" name="phone"  cFormControl placeholder="Phone number" />
               </c-input-group>
 
               <c-input-group class="mb-3">
                 <span cInputGroupText>
                   <svg cIcon name="cilUser"></svg>
                 </span>
-                <input autoComplete="name" cFormControl placeholder="Code Market" />
+                <input autoComplete="name" cFormControl  [(ngModel)]="marketOwner.codeMarket" name="codeMarket"  placeholder="Code Market" />
               </c-input-group>
               <div class="d-grid">
-                <button cButton color="success">Create Market</button>
+                <button cButton (click)="save()" color="success">Create Market</button>
               </div>
             </form>
           </c-card-body>
